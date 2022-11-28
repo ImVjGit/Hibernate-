@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.collection.DaySeven.Set.Team" table="Team">
+		<id name="TeamId" column="Team_id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="TeamName" column="Team_Name"></property>
+		<property name="TeamDetails" column="Team_Details"></property>
+		<set name="player" cascade="all">
+			<key column="TeamPlayerid" ></key>
+			<one-to-many class="com.collection.DaySeven.Set.Players" />
+		</set>
+	</class>
+	<class name="com.collection.DaySeven.Set.Players"  table="Players">
+		<id name="PlayerId" column="Player_Id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="Playername" column="Player_Name"></property>
+	</class>
+
+
+
+</hibernate-mapping>

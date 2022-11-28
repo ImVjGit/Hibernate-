@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!--Session-Factory: its give multiple session at time -->
+	<session-factory>
+
+		<!-- SQL driver loaded using property -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+
+		<!-- JDBC URL is here -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/firstbit</property>
+
+		<!-- user name Databases -->
+		<property name="hibernate.connection.username">root</property>
+		
+		<!-- Password of Database -->
+		<property name="hibernate.connection.password">toor</property>
+		
+		<!-- show database query on console on server -->
+		<property name="show_sql">true</property>
+		
+		<!-- dialect : use for diff db  (oracle,sql,mongolo) -->
+		<property name="hibernate.connection.dialect">org.hibernate.dialect.MYSQL8Dialect</property>
+		
+		<!-- to change in database automatically  -->	
+		<property name="hibernate.hbm2ddl.auto=none">Update</property>
+		
+		<!-- mapping the mapp.xml file here -->
+		<mapping resource="Mapping.xml"/>
+
+	</session-factory>
+
+
+</hibernate-configuration>

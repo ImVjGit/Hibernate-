@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<!-- class name with table database -->
+	<class name="com.daytwoMaven.Player" table="playertable">
+		<!-- its create the primary key name is variable name and column is what 
+			column is given -->
+		<id name="player" column="payerid">
+			<!-- how give is the primary key ...if is assigned is mention then is 
+				programmer is given -->
+			<generator class="assigned"></generator>
+			<!-- class have multiple sequence or UID or HILO etc(their are 12 class ) when we mention this 
+				database is automatically generate primary key -->
+
+		</id>
+		<!-- for mapping data we use property -->
+		<property name="playername" column="playername"></property>
+	</class>
+</hibernate-mapping>
